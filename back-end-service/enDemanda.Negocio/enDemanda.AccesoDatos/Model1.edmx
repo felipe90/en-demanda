@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="onDemandaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="Mun_Num" />
+          </Key>
+          <Property Name="Mun_Num" Type="int" Nullable="false" />
+          <Property Name="Mun_Nombre" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="Mun_RU" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Per_Id" />
+          </Key>
+          <Property Name="Per_Id" Type="int" Nullable="false" />
+          <Property Name="Per_Gen" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Per_Edad" Type="int" Nullable="false" />
+          <Property Name="Per_Grado" Type="int" Nullable="false" />
+          <Property Name="Per_Situ" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Per_Etnia" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Per_Discapacidad" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Per_Calif" Type="int" Nullable="false" />
+          <Property Name="Per_Cocina" Type="bit" Nullable="false" />
+          <Property Name="Per_Pintura" Type="bit" Nullable="false" />
+          <Property Name="Per_Aseo" Type="bit" Nullable="false" />
+          <Property Name="Per_Ropa" Type="bit" Nullable="false" />
+          <Property Name="Per_Jardineria" Type="bit" Nullable="false" />
+          <Property Name="Per_NumMun" Type="int" />
+          <Property Name="Per_Correo" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'onDemanda.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Persona__Per_Num__4BAC3F29">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+          <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Mun_Num" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="Per_NumMun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="onDemandaModelStoreContainer">
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Persona__Per_Num__4BAC3F29" Association="Self.FK__Persona__Per_Num__4BAC3F29">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="onDemandaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="Mun_Num" />
+          </Key>
+          <Property Name="Mun_Num" Type="Int32" Nullable="false" />
+          <Property Name="Mun_Nombre" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Mun_RU" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK__Persona__Per_Num__4BAC3F29" FromRole="Municipio" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Per_Id" />
+          </Key>
+          <Property Name="Per_Id" Type="Int32" Nullable="false" />
+          <Property Name="Per_Gen" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Per_Edad" Type="Int32" Nullable="false" />
+          <Property Name="Per_Grado" Type="Int32" Nullable="false" />
+          <Property Name="Per_Situ" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Per_Etnia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Per_Discapacidad" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Per_Calif" Type="Int32" Nullable="false" />
+          <Property Name="Per_Cocina" Type="Boolean" Nullable="false" />
+          <Property Name="Per_Pintura" Type="Boolean" Nullable="false" />
+          <Property Name="Per_Aseo" Type="Boolean" Nullable="false" />
+          <Property Name="Per_Ropa" Type="Boolean" Nullable="false" />
+          <Property Name="Per_Jardineria" Type="Boolean" Nullable="false" />
+          <Property Name="Per_NumMun" Type="Int32" />
+          <Property Name="Per_Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Municipio" Relationship="Self.FK__Persona__Per_Num__4BAC3F29" FromRole="Persona" ToRole="Municipio" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK__Persona__Per_Num__4BAC3F29">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+          <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Mun_Num" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="Per_NumMun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="onDemandaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Municipios" EntityType="Self.Municipio" />
+          <EntitySet Name="Personas" EntityType="Self.Persona" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK__Persona__Per_Num__4BAC3F29" Association="Self.FK__Persona__Per_Num__4BAC3F29">
+            <End Role="Municipio" EntitySet="Municipios" />
+            <End Role="Persona" EntitySet="Personas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="onDemandaModelStoreContainer" CdmEntityContainer="onDemandaEntities">
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="onDemandaModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="Mun_Num" ColumnName="Mun_Num" />
+                <ScalarProperty Name="Mun_Nombre" ColumnName="Mun_Nombre" />
+                <ScalarProperty Name="Mun_RU" ColumnName="Mun_RU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="onDemandaModel.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="Per_Id" ColumnName="Per_Id" />
+                <ScalarProperty Name="Per_Gen" ColumnName="Per_Gen" />
+                <ScalarProperty Name="Per_Edad" ColumnName="Per_Edad" />
+                <ScalarProperty Name="Per_Grado" ColumnName="Per_Grado" />
+                <ScalarProperty Name="Per_Situ" ColumnName="Per_Situ" />
+                <ScalarProperty Name="Per_Etnia" ColumnName="Per_Etnia" />
+                <ScalarProperty Name="Per_Discapacidad" ColumnName="Per_Discapacidad" />
+                <ScalarProperty Name="Per_Calif" ColumnName="Per_Calif" />
+                <ScalarProperty Name="Per_Cocina" ColumnName="Per_Cocina" />
+                <ScalarProperty Name="Per_Pintura" ColumnName="Per_Pintura" />
+                <ScalarProperty Name="Per_Aseo" ColumnName="Per_Aseo" />
+                <ScalarProperty Name="Per_Ropa" ColumnName="Per_Ropa" />
+                <ScalarProperty Name="Per_Jardineria" ColumnName="Per_Jardineria" />
+                <ScalarProperty Name="Per_NumMun" ColumnName="Per_NumMun" />
+                <ScalarProperty Name="Per_Correo" ColumnName="Per_Correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="onDemandaModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

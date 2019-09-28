@@ -1,0 +1,12 @@
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\enDemanda.AccesoDatos.dll.config
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\enDemanda.AccesoDatos.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\enDemanda.AccesoDatos.pdb
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\EntityFramework.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\EntityFramework.xml
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Release\enDemanda.AccesoDatos.csprojAssemblyReference.cache
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Release\enDemanda.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Release\enDemanda.AccesoDatos.csproj.CopyComplete
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Release\enDemanda.AccesoDatos.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Release\enDemanda.AccesoDatos.pdb

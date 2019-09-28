@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onDemandaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="Mun_Num" />
+    </Key>
+    <Property Name="Mun_Num" Type="Int32" Nullable="false" />
+    <Property Name="Mun_Nombre" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mun_RU" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Personas" Relationship="Self.FK__Persona__Per_Num__4BAC3F29" FromRole="Municipio" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Per_Id" />
+    </Key>
+    <Property Name="Per_Id" Type="Int32" Nullable="false" />
+    <Property Name="Per_Gen" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Per_Edad" Type="Int32" Nullable="false" />
+    <Property Name="Per_Grado" Type="Int32" Nullable="false" />
+    <Property Name="Per_Situ" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Per_Etnia" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Per_Discapacidad" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Per_Calif" Type="Int32" Nullable="false" />
+    <Property Name="Per_Cocina" Type="Boolean" Nullable="false" />
+    <Property Name="Per_Pintura" Type="Boolean" Nullable="false" />
+    <Property Name="Per_Aseo" Type="Boolean" Nullable="false" />
+    <Property Name="Per_Ropa" Type="Boolean" Nullable="false" />
+    <Property Name="Per_Jardineria" Type="Boolean" Nullable="false" />
+    <Property Name="Per_NumMun" Type="Int32" />
+    <Property Name="Per_Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Municipio" Relationship="Self.FK__Persona__Per_Num__4BAC3F29" FromRole="Persona" ToRole="Municipio" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK__Persona__Per_Num__4BAC3F29">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="Mun_Num" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="Per_NumMun" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="onDemandaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Municipios" EntityType="Self.Municipio" />
+    <EntitySet Name="Personas" EntityType="Self.Persona" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK__Persona__Per_Num__4BAC3F29" Association="Self.FK__Persona__Per_Num__4BAC3F29">
+      <End Role="Municipio" EntitySet="Municipios" />
+      <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
