@@ -1,0 +1,24 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">face</mat-icon>
+
+    <mat-card-title>{{profile.name}}</mat-card-title>
+    <!-- <mat-card-subtitle>{{profile.}}</mat-card-subtitle> -->
+  </mat-card-header>
+  <img mat-card-image [src]="profile.img" alt="">
+  <mat-card-content>
+    <p>
+      {{profile.desc}}
+    </p>
+    <span>Habilidades</span>
+    <ul *ngIf="profile">
+      <li *ngFor="let item of profile.skills; let i = index">
+        <span>{{item.name}}</span>
+        <span>{{item.level}}</span>
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Contratar</button>
+  </mat-card-actions>
+</mat-card>

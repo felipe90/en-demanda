@@ -1,0 +1,24 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+    <mat-drawer-content>
+        <!-- side menu -->
+        <mat-drawer #drawer [mode]="push">
+            <app-side-nav-menu></app-side-nav-menu>
+            <button mat-fab aria-label="" class="close-btn" (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-drawer>
+        <!-- main content -->
+        <div class="main-content">
+            <div class="header">
+                <app-header>
+                    <button mat-fab aria-label="" (click)="drawer.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </app-header>
+            </div>
+            <div class="body">
+                <app-perfiles></app-perfiles>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

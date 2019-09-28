@@ -1,0 +1,28 @@
+.example-container {
+    width: 100%;
+    height: 100vh;
+}
+
+mat-drawer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+mat-drawer {
+    width: 20%;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.close-btn {
+    justify-self: flex-end;
+    align-self: flex-end;
+
+
+}
+
+.main-content {
+    width: 100%;
+}
