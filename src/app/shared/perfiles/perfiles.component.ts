@@ -83,7 +83,7 @@ export class PerfilesComponent implements OnInit {
     this.profiles.forEach(item => {
       item.desc = "lorem ";
       item.img = './assets/John.jpg';
-      item.desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis mauris ut nisi vulputate faucibus. Aenean nunc nibh, commodo euismod pretium quis, dignissim ac eros. Fusce venenatis facilisis sapien, nec bibendum urna tempus tincidunt. Duis non felis facilisis justo maximus varius sit amet quis risus. Aenean in neque pretium, blandit ante ut, mattis magna. Vestibulum suscipit placerat elit id facilisis."
+      item.desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis mauris ut nisi vulputate faucibus.  "
       item.skills.forEach(skill => {
         skill.level = Math.floor(Math.random() * 10);
       });
