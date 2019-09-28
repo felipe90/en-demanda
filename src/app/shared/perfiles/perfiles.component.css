@@ -1,3 +1,14 @@
 .perfiles-container {
     padding: 1rem;
+    background-color: darkgray;
+}
+
+.filtros {
+    width: 100%;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.filtro {
+    margin: 0.5rem;
+    display: inline-block;
 }

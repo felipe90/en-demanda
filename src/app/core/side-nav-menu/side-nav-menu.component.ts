@@ -14,12 +14,12 @@ export class SideNavMenuComponent implements OnInit {
   ngOnInit() {
 
     this.menuItems = [
-      {label: "Trabajos", link: "", icon: "assignment"},
-      {label: "Habilidades", link: "", icon: "assignment"},
-      {label: "Campos de accion", link: "", icon: "assignment"},
-      {label: "Recursos", link: "", icon: "assignment"},
-      {label: "Educacion", link: "", icon: "assignment"},
-      {label: "Perfil", link: "", icon: "assignment"},
+      {label: "Trabajos", link: "", icon: "keyboard_arrow_right"},
+      {label: "Habilidades", link: "", icon: "keyboard_arrow_right"},
+      {label: "Campos de accion", link: "", icon: "keyboard_arrow_right"},
+      {label: "Recursos", link: "", icon: "keyboard_arrow_right"},
+      {label: "Educacion", link: "", icon: "keyboard_arrow_right"},
+      {label: "Perfil", link: "", icon: "keyboard_arrow_right"},
     ]
 
   }

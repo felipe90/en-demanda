@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { Profile } from '../profile.model';
 
 @Component({
@@ -18,60 +19,63 @@ export class PerfilesComponent implements OnInit {
     this.profiles = [
       {
         name: "John Ramirez",
+        age: 20,
         desc: "",
         img: "",
         skills: [
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
+          { name: "Carpinteria", level: 0 },
+          { name: "Jardineria", level: 0 },
+        ]
+      },
+      {
+        name: "John Ramirez",
+        age: 20,
+        desc: "",
+        img: "",
+        skills: [
+          { name: "Lectura", level: 0 },
+          { name: "Jardineria", level: 0 },
         ]
       },
       {
         name: "John Ramirez",
         desc: "",
+        age: 20,
         img: "",
         skills: [
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 }
+          { name: "Limpieza", level: 0 },
+          { name: "Carpinteria", level: 0 },
+          { name: "Construccion", level: 0 },
         ]
       },
       {
         name: "John Ramirez",
         desc: "",
+        age: 20,
         img: "",
         skills: [
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
+          { name: "Construccion", level: 0 },
+          { name: "Carpinteria", level: 0 },
         ]
       },
       {
         name: "John Ramirez",
         desc: "",
+        age: 20,
         img: "",
         skills: [
           { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
+          { name: "Jardineria", level: 0 },
         ]
       },
       {
         name: "John Ramirez",
         desc: "",
+        age: 20,
         img: "",
         skills: [
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
-        ]
-      },
-      {
-        name: "John Ramirez",
-        desc: "",
-        img: "",
-        skills: [
-          { name: "Habilidad", level: 0 },
-          { name: "Habilidad", level: 0 },
+          { name: "Carpinteria", level: 0 },
+          { name: "Limpieza", level: 0 },
         ]
       }
     ]
@@ -79,6 +83,7 @@ export class PerfilesComponent implements OnInit {
     this.profiles.forEach(item => {
       item.desc = "lorem ";
       item.img = './assets/John.jpg';
+      item.desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis mauris ut nisi vulputate faucibus. Aenean nunc nibh, commodo euismod pretium quis, dignissim ac eros. Fusce venenatis facilisis sapien, nec bibendum urna tempus tincidunt. Duis non felis facilisis justo maximus varius sit amet quis risus. Aenean in neque pretium, blandit ante ut, mattis magna. Vestibulum suscipit placerat elit id facilisis."
       item.skills.forEach(skill => {
         skill.level = Math.floor(Math.random() * 10);
       });

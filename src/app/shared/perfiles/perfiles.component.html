@@ -1,34 +1,30 @@
 <div class="perfiles-container row">
-  <div class="row">
+  <div class="filtros row">
     <mat-accordion class="col-12">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Personal data
+            Filtros
           </mat-panel-title>
-          <mat-panel-description>
-            Type your name and age
-          </mat-panel-description>
         </mat-expansion-panel-header>
-
-        <mat-form-field>
-          <input matInput placeholder="First name">
+        <mat-form-field class="filtro">
+          <input matInput placeholder="Edad">
         </mat-form-field>
-
-        <mat-form-field>
-          <input matInput placeholder="Age">
+        <mat-form-field class="filtro">
+          <input matInput placeholder="Habilidad">
         </mat-form-field>
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <mat-form-field class="filtro">
+          <input matInput placeholder="Nivel de Habilidad">
+        </mat-form-field>
+        <div class="filtro">
+          <mat-checkbox>Es poblacion vulnerable</mat-checkbox>
+        </div>
+        <div class="filtro">
+          <mat-checkbox>Es extrajero</mat-checkbox>
+        </div>
+        <div class="filtro">
+          <button mat-raised-button color="primary">Aplicar</button>
+        </div>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
