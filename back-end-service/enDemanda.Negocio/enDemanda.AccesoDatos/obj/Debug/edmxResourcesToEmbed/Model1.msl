@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="onDemandaModelStoreContainer" CdmEntityContainer="onDemandaEntities">
+    <EntitySetMapping Name="Municipios">
+      <EntityTypeMapping TypeName="onDemandaModel.Municipio">
+        <MappingFragment StoreEntitySet="Municipio">
+          <ScalarProperty Name="Mun_Num" ColumnName="Mun_Num" />
+          <ScalarProperty Name="Mun_Nombre" ColumnName="Mun_Nombre" />
+          <ScalarProperty Name="Mun_RU" ColumnName="Mun_RU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="onDemandaModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="Per_Id" ColumnName="Per_Id" />
+          <ScalarProperty Name="Per_Gen" ColumnName="Per_Gen" />
+          <ScalarProperty Name="Per_Edad" ColumnName="Per_Edad" />
+          <ScalarProperty Name="Per_Grado" ColumnName="Per_Grado" />
+          <ScalarProperty Name="Per_Situ" ColumnName="Per_Situ" />
+          <ScalarProperty Name="Per_Etnia" ColumnName="Per_Etnia" />
+          <ScalarProperty Name="Per_Discapacidad" ColumnName="Per_Discapacidad" />
+          <ScalarProperty Name="Per_Calif" ColumnName="Per_Calif" />
+          <ScalarProperty Name="Per_Cocina" ColumnName="Per_Cocina" />
+          <ScalarProperty Name="Per_Pintura" ColumnName="Per_Pintura" />
+          <ScalarProperty Name="Per_Aseo" ColumnName="Per_Aseo" />
+          <ScalarProperty Name="Per_Ropa" ColumnName="Per_Ropa" />
+          <ScalarProperty Name="Per_Jardineria" ColumnName="Per_Jardineria" />
+          <ScalarProperty Name="Per_NumMun" ColumnName="Per_NumMun" />
+          <ScalarProperty Name="Per_Correo" ColumnName="Per_Correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="onDemandaModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

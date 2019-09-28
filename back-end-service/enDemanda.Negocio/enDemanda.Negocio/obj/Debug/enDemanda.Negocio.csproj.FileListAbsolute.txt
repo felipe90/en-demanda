@@ -1,0 +1,13 @@
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\enDemanda.Negocio.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\enDemanda.Negocio.pdb
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\obj\Debug\enDemanda.Negocio.csprojAssemblyReference.cache
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\obj\Debug\enDemanda.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\obj\Debug\enDemanda.Negocio.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\obj\Debug\enDemanda.Negocio.pdb
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\enDemanda.Negocio.dll.config
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\enDemanda.AccesoDatos.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\enDemanda.AccesoDatos.pdb
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\enDemanda.AccesoDatos.dll.config
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.Negocio\obj\Debug\enDemanda.Negocio.csproj.CopyComplete

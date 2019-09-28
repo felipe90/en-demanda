@@ -1,0 +1,11 @@
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Debug\enDemanda.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\enDemanda.AccesoDatos.dll.config
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\enDemanda.AccesoDatos.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\enDemanda.AccesoDatos.pdb
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\EntityFramework.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\EntityFramework.xml
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Debug\enDemanda.AccesoDatos.csproj.CopyComplete
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Debug\enDemanda.AccesoDatos.dll
+C:\Users\carlos.siabato\source\repos\enDemanda.Negocio\enDemanda.AccesoDatos\obj\Debug\enDemanda.AccesoDatos.pdb

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onDemandaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="Mun_Num" />
+    </Key>
+    <Property Name="Mun_Num" Type="int" Nullable="false" />
+    <Property Name="Mun_Nombre" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Mun_RU" Type="char" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Per_Id" />
+    </Key>
+    <Property Name="Per_Id" Type="int" Nullable="false" />
+    <Property Name="Per_Gen" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Per_Edad" Type="int" Nullable="false" />
+    <Property Name="Per_Grado" Type="int" Nullable="false" />
+    <Property Name="Per_Situ" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Per_Etnia" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Per_Discapacidad" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Per_Calif" Type="int" Nullable="false" />
+    <Property Name="Per_Cocina" Type="bit" Nullable="false" />
+    <Property Name="Per_Pintura" Type="bit" Nullable="false" />
+    <Property Name="Per_Aseo" Type="bit" Nullable="false" />
+    <Property Name="Per_Ropa" Type="bit" Nullable="false" />
+    <Property Name="Per_Jardineria" Type="bit" Nullable="false" />
+    <Property Name="Per_NumMun" Type="int" />
+    <Property Name="Per_Correo" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'onDemanda.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Persona__Per_Num__4BAC3F29">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="Mun_Num" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="Per_NumMun" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="onDemandaModelStoreContainer">
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+      <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Persona__Per_Num__4BAC3F29" Association="Self.FK__Persona__Per_Num__4BAC3F29">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
